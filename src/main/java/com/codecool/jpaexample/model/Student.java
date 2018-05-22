@@ -26,6 +26,10 @@ public class Student {
     @OneToOne
     private Address address;
 
+    @ElementCollection
+    @CollectionTable(name = "phone")
+    private List<String> phoneNumbers  = new ArrayList<>();
+
     public Student() {
     }
 
