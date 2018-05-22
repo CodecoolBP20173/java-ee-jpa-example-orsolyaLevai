@@ -18,10 +18,14 @@ public class Klass {
     //@JoinColumn(name="klass")
     private Set<Student> students = new HashSet<>();
 
+    @Enumerated(EnumType.STRING)
+    private CCLocation location;
+
     public Klass() {}
 
     public Klass(String name) {
         this.name = name;
+        this.location = CCLocation.BUDAPEST;
     }
 
     public String getName() {
@@ -43,6 +47,14 @@ public class Klass {
 
     public long getId() {
         return id;
+    }
+
+    public CCLocation getLocation() {
+        return location;
+    }
+
+    public void setLocation(CCLocation location) {
+        this.location = location;
     }
 
 }
