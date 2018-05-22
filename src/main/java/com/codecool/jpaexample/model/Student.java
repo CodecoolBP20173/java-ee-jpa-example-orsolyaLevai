@@ -23,7 +23,7 @@ public class Student {
     @Transient
     private long age;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "student")
     private Address address;
 
     @ElementCollection

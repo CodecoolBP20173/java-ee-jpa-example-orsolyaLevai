@@ -16,6 +16,10 @@ public class Address {
     private String city;
     private String addr;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id")
+    private Student student;
+
     public Address() {
     }
 
