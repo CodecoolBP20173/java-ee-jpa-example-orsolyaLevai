@@ -30,6 +30,10 @@ public class Student {
     @CollectionTable(name = "phone")
     private List<String> phoneNumbers  = new ArrayList<>();
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "class_id")
+    private Klass klass;
+
     public Student() {
     }
 

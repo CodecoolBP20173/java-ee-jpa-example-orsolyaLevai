@@ -14,8 +14,8 @@ public class Klass {
 
     private String name;
 
-    @OneToMany(cascade=CascadeType.ALL)
-    //@JoinColumn(name="student_id")
+    @OneToMany(mappedBy = "klass")
+    //@JoinColumn(name="klass")
     private Set<Student> students = new HashSet<>();
 
     public Klass() {}
