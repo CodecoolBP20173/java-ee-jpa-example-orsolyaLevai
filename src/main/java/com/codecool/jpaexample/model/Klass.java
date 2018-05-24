@@ -27,6 +27,11 @@ public class Klass {
         this.location = CCLocation.BUDAPEST;
     }
 
+    public Klass(String name, CCLocation location) {
+        this.name = name;
+        this.location = location;
+    }
+
     public String getName() {
         return name;
     }
