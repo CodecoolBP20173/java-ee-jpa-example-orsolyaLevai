@@ -33,6 +33,7 @@ public class JPAExample {
         transaction.begin();
         em.persist(address);
         em.persist(student);
+        em.persist(classBp2);
         transaction.commit();
         System.out.println("Ödön saved.");
 
@@ -58,11 +59,13 @@ public class JPAExample {
         System.out.println("--Found student #1");
         System.out.println("----name----" + foundStudent1.getName());
         System.out.println("----address of student----" + foundStudent1.getAddress());
+        System.out.println("----class of student----" + foundStudent1.getKlass().getName());
 
         Student foundStudent2 = em.find(Student.class, 2L);
         System.out.println("--Found student #2");
         System.out.println("----name----" + foundStudent2.getName());
         System.out.println("----address of student----" + foundStudent2.getAddress());
+        System.out.println("----class of student----" + foundStudent2.getKlass().getName());
 
         Address foundAddress1 = em.find(Address.class, 1L);
         System.out.println("--Found address #1");

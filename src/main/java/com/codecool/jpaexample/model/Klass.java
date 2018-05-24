@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "Class")
+@Table(name = "class")
 public class Klass {
 
     @Id
@@ -14,8 +14,7 @@ public class Klass {
 
     private String name;
 
-    @OneToMany(mappedBy = "klass")
-    //@JoinColumn(name="klass")
+    @OneToMany(mappedBy = "klass", cascade = CascadeType.ALL)
     private Set<Student> students = new HashSet<>();
 
     @Enumerated(EnumType.STRING)
@@ -42,6 +41,7 @@ public class Klass {
     }
 
     public void addStudent(Student student) {
+        student.setKlass(this);
         students.add(student);
     }
 
